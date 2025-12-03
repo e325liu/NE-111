@@ -70,6 +70,7 @@ elif value1.strip():
 
 if data is None:
     tab1.info("Please enter valid data via text or upload a CSV file.")
+    tab1.text('If Streamlit flags a TypeError when the app has launched, please ignore it and just input some valid data.')
 if data is not None:
     tab1.info('Please click on "View/Adjust Fit" tab to continue.')         
     
@@ -195,6 +196,7 @@ parameters.markdown(f'**The average error is:** {avgerr}')
 parameters.markdown(f'**The maximum error is:** {maxerr}')
 
 fittedgraph.caption('*Generally, lower average and maximum error values indicate a better fit.')
+
 
 
 
