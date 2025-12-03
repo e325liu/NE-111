@@ -6,7 +6,7 @@ Created on Mon Nov 10 16:16:23 2025
 """
 
 import streamlit as st
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import pandas as pd
 import numpy as np
 from scipy import stats
@@ -195,4 +195,5 @@ parameters.markdown(f'**The average error is:** {avgerr}')
 parameters.markdown(f'**The maximum error is:** {maxerr}')
 
 fittedgraph.caption('*Generally, lower average and maximum error values indicate a better fit.')
+
 
