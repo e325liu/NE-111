@@ -41,7 +41,7 @@ value2=uploadinput.file_uploader(
     label_visibility="visible", 
     )
 
-#%%
+
 #processing stuff
 
 tab1.subheader('Preview of graphed data without fit')
@@ -101,7 +101,7 @@ ax2.set_title('Histogram')
 graphscatter, graphhisto = tab1.columns(2)
 graphscatter.pyplot(fig1)
 graphhisto.pyplot(fig2)
-#%%
+
 #choose type of distribution
 options = ['Beta', 'Chi-squared', 'Gamma', 'Gumbel', 'Lognormal', 'Logistic', 'Normal', 'Rayleigh', 'Student’s t', 'Uniform', 'Weibull']
 
@@ -146,12 +146,12 @@ shift= parameters.slider('Adjust Fit Shift',
 spread= parameters.slider('Adjust Fit Spread',
           min_value=-float((max(data)-min(data))/2),
           max_value=float((max(data)-min(data))/2),
-          value=1.0,
+          value=0.0,
           step=0.1,
           disabled=False,
           label_visibility="visible",
           )
-#%%
+
 #start of tab2 (fit line of graphs)
 
 choice=optdict[option]
@@ -181,7 +181,6 @@ fittedgraph.pyplot(fig)
 
 
 
-#%%
 #errors
 
 histobar, binbounds= np.histogram(data, bins=25, density=True)
@@ -196,7 +195,5 @@ parameters.markdown(f'**The average error is:** {avgerr}')
 parameters.markdown(f'**The maximum error is:** {maxerr}')
 
 fittedgraph.caption('*Generally, lower average and maximum error values indicate a better fit.')
-
-
 
 
